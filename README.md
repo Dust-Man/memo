@@ -27,8 +27,8 @@ memo Ai is a virtual psychologist that uses artificial inteligence to process us
 - [Pandas Documentation](https://pandas.pydata.org/pandas-docs/stable/)
 
 ### Contributors
-Josué Iram Tijerina de León (josue.tijerina@outlook.com)
-Emilio Puga Ascencio (emilio.puga@live.com)
-Carlos Gael Hernández Parrilla (carlosgaelhp@gmail.com)
-Sohit Patro (sohitpatro25@solonschools.net)
+Josué Iram Tijerina de León (josue.tijerina@outlook.com)<\b>
+Emilio Puga Ascencio (emilio.puga@live.com)<\b>
+Carlos Gael Hernández Parrilla (carlosgaelhp@gmail.com)<\b>
+Sohit Patro (sohitpatro25@solonschools.net)<\b>
 
