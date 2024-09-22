@@ -1,0 +1,264 @@
+/* Estilo para el cuerpo y diseño */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff8f0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    flex-direction: column; 
+}
+/* Estilo para el título prinicpal */
+h1 {
+    font-size: 48px;
+    color: #F7B267;
+    margin-bottom: 80px; /* Espacio entre el título y la esfera */
+}
+
+/* Estilo del contenedor principal */
+main {
+    background-color: transparent;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+/* Initial Button Style (circle) */
+body {
+    background-color: #fff8f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#mic {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; /* Forma circular */
+    background:  #F4845F; 
+    box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.2); /* Sombra grande */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Interacción visual */
+    border: none;
+    outline: none;
+    transition: all 0.8s ease-in-out; /* Transición suave */
+    margin-bottom: 60px;
+    position: relative;
+}
+.button {
+    display: inline-block;
+    padding: 9px 20px;
+    background-color: #F4845F;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 20px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute; /* Use absolute positioning */
+    top: 80%; /* Distance from the top */
+    right: 5%; /* Distance from the right */
+}
+
+.button:hover {
+    background-color: #F27059;
+}
+
+button.mic-toggle.active {
+    width: 400px;
+    height: 250px;
+    border-radius: 80px / 80px; /* Forma elíptica como una nube */
+    background-color: #F4845F; /* Color de la nube */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Sombra para la nube */
+    animation: moveCloud 4s infinite ease-in-out; /* Animación de movimiento */
+
+    /* Añadir líneas de sonido simuladas */
+    position: relative;
+}
+
+button.mic-toggle.active::before, button.mic-toggle.active::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 8px;
+    height: 40px;
+    background-color: white;
+    border-radius: 5px;
+    transform: translateY(-50%);
+    animation: wave 0.5s infinite ease-in-out alternate;
+}
+
+button.mic-toggle.active::before {
+    left: 30%;
+    animation-delay: 0.5s;
+}
+
+button.mic-toggle.active::after {
+    right: 30%;
+    animation-delay: 0.1s;
+}
+
+/* Animación de movimiento de las líneas de sonido */
+@keyframes wave {
+    0% {
+        height: 20px;
+    }
+    100% {
+        height: 40px;
+    }
+}
+
+/* Animación de movimiento para la nube */
+@keyframes moveCloud {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px) translateY(-10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Estilo del subtítulo debajo de la esfera */
+p {
+    font-size: 18px;
+    color: #605454;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+/* Contenedor inicial para las letras y el círculo */
+#animation-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.letters span {
+    font-size: 100px;
+    font-weight: bold;
+    opacity: 0;
+    animation: lettersAnimation 3s forwards ease-in-out;
+}
+
+.letters span:nth-child(1) { animation-delay: 0s; }
+.letters span:nth-child(2) { animation-delay: 0.5s; }
+.letters span:nth-child(3) { animation-delay: 1s; }
+.letters span:nth-child(4) { animation-delay: 1.5s; }
+
+@keyframes lettersAnimation {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Animación del círculo */
+.circle-expand {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #F4845F;
+    animation: circleExpand 2s forwards ease-in-out;
+    animation-delay: 3s;
+}
+
+@keyframes circleExpand {
+    0% { width: 10px; height: 10px; opacity: 0; }
+    50% { width: 100px; height: 100px; opacity: 1; }
+    100% { width: 5000px; height: 5000px; opacity: 1; }
+}
+
+/* Contenido después de la animación */
+#content {
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+#content.hidden {
+    display: none;
+}
+
+#mic {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: #F4845F;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+}
+
+#mic:hover {
+    transform: scale(1.1);
+}
+/* Estilo del reproductor de audio */
+audio {
+    width: 100%;
+    margin-top: 20px;
+    display: none; /* Lo escondemos si no es necesario en el centro */
+    margin-bottom: 30px;
+}
+
+/* Estilos para cuando el micrófono está activo */
+#mic.active {
+    background-color: #F27059;
+}
+
+#mic.active:hover {
+    background-color: #F27059;
+}
+/* Estilo del reproductor de audio */
+audio {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+    display: block;
+}
+
+/* Estilos adicionales del botón cuando está activo */
+#mic.active {
+    background-color: #F27059;
+}
+
+#mic.active:hover {
+    background-color: #F27059;
+}
+
+/* Ajustar el pulso del botón */
+@keyframes pulse {
+    0% {
+        transform: scale(0.95); /* Tamaño reducido */
+    }
+    50% {
+        transform: scale(1); /* Expansión */
+    }
+    100% {
+        transform: scale(0.95); /* Regreso al tamaño reducido */
+    }
+}
+
+/* Aplicar la animación al botón de micrófono cuando el audio esté en reproducción */
+button.is-playing {
+    animation: pulse 0.4s infinite; /* Más rápido (0.5 segundos) */
+}

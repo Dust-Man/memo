@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'design.css' %}">
+    <title>MEMO</title>
+</head>
+<body>
+
+    <!-- Contenedor para la animación inicial de las letras -->
+    <div id="animation-wrapper">
+        <div class="letters">
+            <span>m</span><span>e</span><span>m</span><span>o</span>
+        </div>
+        <div class="circle-expand"></div>
+    </div>
+
+    <!-- Contenido que aparece después de la animación -->
+    <div id="content" class="hidden">
+        <main>
+            <!-- Título principal -->
+            <h1>Hi, I'm memo. I'm here for you.</h1>
+
+            <!-- Botón en forma de esfera para grabar -->
+            <button class="mic-toggle" id="mic">I'm ready!</button>
+
+            <!-- Texto debajo del botón (subtítulo) -->
+            <p>Press the circle to talk</p>
+            
+
+            <a href="/memo" class="button">Logout</a>
+        
+            <!-- Reproductor de audio visible -->
+            <audio class="playback" controls></audio>
+        </main>
+    </div>
+
+    <!-- Script que controla la animación y el evento de clic en el botón -->
+    <script src="{% static 'main.js' %}"></script>
+
+</body>
+</html>
+

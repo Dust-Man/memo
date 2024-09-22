@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>memo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#why-this-matters">memo</a></li>
+                <li><a href="#information">information</a></li>
+                <li><a href="#login">talk with memo</a></li>
+                <li><a href="#about-us">about </a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="why-this-matters">
+        <h1>memo</h1>
+        <p>AI psychologist, providing 24/7 mental health support. It is accesible and affordable, making expert guidance available to anyone, anywhere, and anytime. memo helps prevent suicides. It also helps with stress, anxiety, and life’s challenges...</p>
+    </section>
+
+    <section id="information">
+        <div class="info-box">
+            <h2>INFORMATION</h2>
+            <p>memo is an AI mental health advisor that helps prevent suicides. memo accompanies people through hard moments, making sure that you do not ever feel alone and that you have important security information. memo uses natural language processing and has direct communication with users using their voices. Finally, if someone is at risk of committing suicide, memo calls the user's emergency contact to advise them to take action.
+            </p>
+        </div>
+    </section>
+
+    <section id="login">
+        <h2>TALK WITH MEMO</h2>
+        <div class="login-buttons">
+            <a href="/memo/login" class = "button">Login</a>
+            <a href="/memo/register" class = "button2">Register</a>
+        </div>
+    </section>
+
+    <section id="about-us">
+        <h2>ABOUT US</h2>
+        <div class="names">
+            <a href="http://www.linkedin.com/in/josuetijerina" target="_blank">Josué Iram Tijerina de León</a>
+            <a href="https://www.linkedin.com/in/carlos-gael-hern%C3%A1ndez-parrilla-236ab0211/" target="_blank">Carlos Gael Hernández Parrilla</a>
+            <a href="https://www.linkedin.com/in/emiliopuga/" target="_blank">Emilio Puga Ascencio</a>
+            <a href="https://www.linkedin.com/in/sohit-patro-947aa832a/" target="_blank">Sohit Patro</a>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
