@@ -76,11 +76,11 @@ def process_audio(request):
             emergency_phone = profile.emergency_phone
             name = profile.full_name
             account_sid = "ACac918f742f70d937efed69dc27b344d2"
-            auth_token = "06b9c952cc1b5c46a2248d21e580ffc0"
+            auth_token = "5cb1d36a24a555ac20d1594c622208c8"
             client = Client(account_sid, auth_token)
             print(emergency_phone)
             call = client.calls.create(
-                twiml='<Response><Say>Hello! We are contacting you from memo (a mental health advisor) we noticed that {name} who registered you as an emergency contact is at risk, please contact him or her as fast as posible</Say></Response>',
+                twiml=f'<Response><Say>Hello! We are contacting you from memo (a mental health advisor) we noticed that {name} who registered you as an emergency contact is at risk, please contact him or her as fast as posible</Say></Response>',
                 to= emergency_phone,
                 from_="+12065392866"
             )
@@ -128,7 +128,7 @@ def response (prompt):
   completion = client.chat.completions.create(
       model="gpt-4o-mini",
       messages=[
-          {"role": "system", "content": "You are a mental health counselor. Your role is to advise people on their daily life problems, as well as identify potential individuals at risk of suicide. Your responses must follow the format: [status], response. The status can be either S or N, representing whether the individual is a potential suicide risk or not. It is important that you use brackets around the status."},
+          {"role": "system", "content": "You are a mental health counselor.Your name is memo. Your role is to advise people on their daily life problems, as well as identify potential individuals at risk of suicide. Your responses must follow the format: [status], response. The status can be either S or N, representing whether the individual is a potential suicide risk or not. It is important that you use brackets around the status."},
           {
               "role": "user",
                 "content": f"{prompt}"
